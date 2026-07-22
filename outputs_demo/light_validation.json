@@ -1,0 +1,34 @@
+{
+  "method": "leave_one_site_out_linear_interpolation",
+  "n_sites": 9,
+  "overall_rmse_mag_arcsec2": 0.2414444688034474,
+  "overall_mae_mag_arcsec2": 0.16512945226545628,
+  "by_direction": {
+    "dune": {
+      "rmse_mag_arcsec2": 0.29999815237809624,
+      "mae_mag_arcsec2": 0.18935459670413163,
+      "bias_mag_arcsec2": 0.005324364325750884
+    },
+    "north": {
+      "rmse_mag_arcsec2": 0.2291120540533936,
+      "mae_mag_arcsec2": 0.21322588359121003,
+      "bias_mag_arcsec2": -0.008021622996050977
+    },
+    "ocean": {
+      "rmse_mag_arcsec2": 0.0825332374454681,
+      "mae_mag_arcsec2": 0.050356614015874136,
+      "bias_mag_arcsec2": 0.009243711189094247
+    },
+    "south": {
+      "rmse_mag_arcsec2": 0.16967582980471144,
+      "mae_mag_arcsec2": 0.14013738800677208,
+      "bias_mag_arcsec2": 0.018097962938710625
+    },
+    "zenith": {
+      "rmse_mag_arcsec2": 0.3367258682265299,
+      "mae_mag_arcsec2": 0.23257277900929355,
+      "bias_mag_arcsec2": 0.03437668995379263
+    }
+  },
+  "caveat": "O erro avalia somente a interpolacao ao longo dos nove pontos; nao valida a separacao entre componentes natural e artificial."
+}

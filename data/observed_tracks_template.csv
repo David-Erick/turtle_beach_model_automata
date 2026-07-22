@@ -1,0 +1,1 @@
+replicate,turtle_id,nest_id,outcome,arrival_sea,disoriented,time_s,path_length_m,direct_distance_m,efficiency,initial_heading_deg,abs_initial_heading_deg,max_landward_displacement_m,landward_step_fraction,remaining_energy,start_x_m,start_y_m,end_x_m,end_y_m

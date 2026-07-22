@@ -1,0 +1,63 @@
+{
+  "status": "calibracao_demonstrativa",
+  "parameters": {
+    "kappa_sea": 0.9893788777565431,
+    "kappa_artificial": 0.27316727804077634,
+    "persistence": 1.5034503852594288,
+    "temperature": 0.776575431656329
+  },
+  "objective": 1.0923881405150364,
+  "success": false,
+  "message": "Maximum number of iterations has been exceeded.",
+  "n_function_evaluations": 60,
+  "observed_metrics": {
+    "n": 100.0,
+    "sea_arrival_rate": 0.68,
+    "disorientation_rate": 0.9,
+    "predation_rate": 0.18,
+    "exhaustion_rate": 0.0,
+    "censored_rate": 0.14,
+    "median_time_to_sea_s": 660.0,
+    "median_path_length_m": 83.60102807365163,
+    "median_efficiency": 0.43903254260300745,
+    "mean_abs_initial_heading_deg": 47.85924403970068,
+    "median_max_landward_m": 0.0
+  },
+  "simulated_metrics": {
+    "n": 32.0,
+    "sea_arrival_rate": 0.6875,
+    "disorientation_rate": 0.84375,
+    "predation_rate": 0.1875,
+    "exhaustion_rate": 0.0,
+    "censored_rate": 0.0625,
+    "median_time_to_sea_s": 670.0,
+    "median_path_length_m": 78.6335136523794,
+    "median_efficiency": 0.4674268082000312,
+    "mean_abs_initial_heading_deg": 47.15561239435129,
+    "median_max_landward_m": 0.0
+  },
+  "parameter_bounds": {
+    "kappa_sea": [
+      0.3,
+      2.5
+    ],
+    "kappa_artificial": [
+      0.05,
+      1.3
+    ],
+    "persistence": [
+      0.0,
+      1.8
+    ],
+    "temperature": [
+      0.25,
+      1.8
+    ]
+  },
+  "observed_file": "/mnt/data/turtle_beach_model/outputs_demo/synthetic_observed_tracks.csv",
+  "notes": [
+    "A calibracao ajusta resumos de trajetorias, nao lux absolutos.",
+    "Dados sinteticos servem apenas para verificar o fluxo computacional e a recuperacao aproximada de parametros.",
+    "Para inferencia ecologica, substitua o arquivo sintetico por trajetorias independentes da praia estudada."
+  ]
+}

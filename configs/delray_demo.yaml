@@ -1,0 +1,136 @@
+site:
+  name: Delray Beach directional-light case study
+  country: USA
+  species: Caretta caretta
+  calibration_level: environmental_measured_behavioral_demo
+  notes: >-
+    O campo luminoso usa medicoes direcionais publicadas em Delray Beach.
+    O perfil transversal, os ninhos e os obstaculos incluidos neste pacote sao
+    demonstrativos e devem ser substituidos por levantamentos locais para uma
+    calibracao integral da praia.
+
+grid:
+  cell_size_m: 0.5
+  dt_s: 5.0
+
+environment:
+  eye_height_m: 0.035
+  sqm_reference_mag: 20.0
+  artificial_cross_shore_decay_m: 120.0
+  dune_occlusion_strength: 1.4
+  lateral_boundary: reflecting
+
+inputs:
+  beach_profile_csv: ../data/delray_beach_profile_demo.csv
+  light_measurements_csv: ../data/delray_sqm_mean.csv
+  nests_csv: ../data/delray_nests_demo.csv
+  obstacles_csv: ../data/obstacles_demo.csv
+
+behavior:
+  kappa_sea: 1.10
+  kappa_artificial: 0.42
+  kappa_dune: 0.55
+  kappa_slope: 0.30
+  persistence: 0.75
+  temperature: 0.85
+  stay_penalty: 0.35
+  landward_cost: 0.0
+  individual_cv: 0.12
+
+processes:
+  initial_energy_mean: 1.0
+  initial_energy_sd: 0.08
+  basal_energy_per_s: 0.00012
+  movement_energy_per_m: 0.0022
+  slope_energy_multiplier: 0.5
+  predation_hazard_per_s: 0.00008
+  predation_time_reference_s: 300.0
+  predation_time_effect: 0.35
+  predation_light_effect: 0.08
+  predation_landward_effect: 0.20
+
+simulation:
+  n_turtles: 50
+  max_time_s: 1800
+  track_stride: 1
+  nest_jitter_m: 0.3
+
+metrics:
+  initial_window_m: 5.0
+  disorientation_angle_deg: 30.0
+  disorientation_efficiency_threshold: 0.55
+
+calibration:
+  bounds:
+    kappa_sea: [0.3, 2.5]
+    kappa_artificial: [0.05, 1.3]
+    persistence: [0.0, 1.8]
+    temperature: [0.25, 1.8]
+  metric_weights:
+    sea_arrival_rate: 3.0
+    disorientation_rate: 2.5
+    median_time_to_sea_s: 1.0
+    median_efficiency: 1.5
+    mean_abs_initial_heading_deg: 1.5
+  n_turtles_per_evaluation: 35
+  quick_n_turtles_per_evaluation: 16
+  common_random_seeds: [1201, 1202]
+  quick_common_random_seeds: [1201]
+  evaluation_seeds: [2201, 2202, 2203, 2204]
+  quick_evaluation_seeds: [2201, 2202]
+  optimizer_seed: 2026
+  quick_maxiter: 4
+  quick_popsize: 3
+  quick_tolerance: 0.15
+  maxiter: 24
+  popsize: 8
+  tolerance: 0.02
+
+validation:
+  n_replicates: 10
+  n_turtles_per_replicate: 50
+  base_seed: 73000
+
+synthetic_truth:
+  kappa_sea: 1.35
+  kappa_artificial: 0.35
+  persistence: 0.90
+  temperature: 0.75
+
+experiments:
+  n_replicates: 30
+  base_seed: 41000
+  track_replicates_to_save: 1
+  scenarios:
+    baseline:
+      artificial_scale: 1.0
+      sea_scale: 1.0
+      spectral_weight: 1.0
+      shielding: 0.0
+      dune_extra_height_m: 0.0
+    lights_off:
+      artificial_scale: 0.0
+      sea_scale: 1.0
+      spectral_weight: 1.0
+      shielding: 0.0
+    shielded_70pct:
+      artificial_scale: 1.0
+      sea_scale: 1.0
+      spectral_weight: 1.0
+      shielding: 0.70
+    amber_proxy:
+      artificial_scale: 1.0
+      sea_scale: 1.0
+      spectral_weight: 0.45
+      shielding: 0.0
+    bright_moon_proxy:
+      artificial_scale: 1.0
+      sea_scale: 1.35
+      spectral_weight: 1.0
+      shielding: 0.0
+    combined_mitigation:
+      artificial_scale: 0.55
+      sea_scale: 1.15
+      spectral_weight: 0.45
+      shielding: 0.70
+      dune_extra_height_m: 0.6

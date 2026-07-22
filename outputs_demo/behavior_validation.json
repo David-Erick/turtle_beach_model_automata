@@ -1,0 +1,66 @@
+{
+  "status": "validacao_demonstrativa_sintetica",
+  "observed_file": "/mnt/data/turtle_beach_model/outputs_demo/synthetic_validation_tracks.csv",
+  "calibration_file": "/mnt/data/turtle_beach_model/outputs_demo/calibration.json",
+  "n_replicates": 4,
+  "n_turtles_per_replicate": 20,
+  "observed_metrics": {
+    "n": 40.0,
+    "sea_arrival_rate": 0.675,
+    "disorientation_rate": 0.875,
+    "predation_rate": 0.2,
+    "exhaustion_rate": 0.0,
+    "censored_rate": 0.125,
+    "median_time_to_sea_s": 725.0,
+    "median_path_length_m": 87.9649891043306,
+    "median_efficiency": 0.42376127434216077,
+    "mean_abs_initial_heading_deg": 50.229815677216656,
+    "median_max_landward_m": 0.0
+  },
+  "simulated_metrics": {
+    "n": 80.0,
+    "sea_arrival_rate": 0.6625,
+    "disorientation_rate": 0.8375,
+    "predation_rate": 0.225,
+    "exhaustion_rate": 0.0,
+    "censored_rate": 0.1,
+    "median_time_to_sea_s": 790.0,
+    "median_path_length_m": 100.50052301026341,
+    "median_efficiency": 0.3611261590601692,
+    "mean_abs_initial_heading_deg": 40.68525875252955,
+    "median_max_landward_m": 0.0
+  },
+  "comparison": {
+    "sea_arrival_rate": {
+      "observed": 0.675,
+      "simulated": 0.6625,
+      "difference": -0.012500000000000067,
+      "relative_error": -0.018518518518518615
+    },
+    "disorientation_rate": {
+      "observed": 0.875,
+      "simulated": 0.8375,
+      "difference": -0.03749999999999998,
+      "relative_error": -0.04285714285714283
+    },
+    "median_time_to_sea_s": {
+      "observed": 725.0,
+      "simulated": 790.0,
+      "difference": 65.0,
+      "relative_error": 0.0896551724137931
+    },
+    "median_efficiency": {
+      "observed": 0.42376127434216077,
+      "simulated": 0.3611261590601692,
+      "difference": -0.06263511528199156,
+      "relative_error": -0.14780754890645723
+    },
+    "mean_abs_initial_heading_deg": {
+      "observed": 50.229815677216656,
+      "simulated": 40.68525875252955,
+      "difference": -9.544556924687107,
+      "relative_error": -0.19001775730219028
+    }
+  },
+  "interpretation": "Erros pequenos apoiam validade preditiva apenas para o dominio, periodo e protocolo representados pelo conjunto de validacao."
+}
