@@ -1,6 +1,6 @@
 # Modelo calibrável de orientação de filhotes de tartarugas marinhas
 
-Este projeto reestrutura o autômato celular original como um **modelo espacial estocástico, fisicamente escalado e calibrável para uma praia**. O eixo transversal `x` vai da duna para o oceano; o eixo `y` acompanha a linha da costa. A escolha de movimento combina pista marítima, campo luminoso artificial direcional, silhueta da duna, declividade, persistência e variabilidade individual.
+Este projeto estrutura o autômato celular como um **modelo espacial estocástico, fisicamente escalado e calibrável para uma praia**. O eixo transversal `x` vai da duna para o oceano; o eixo `y` acompanha a linha da costa. A escolha de movimento combina pista marítima, campo luminoso artificial direcional, silhueta da duna, declividade, persistência e variabilidade individual.
 
 ## Estado da calibração incluída
 
